@@ -1,0 +1,2 @@
+verilog work "Decoder4to16.v"
+verilog work "RegisterBank.v"

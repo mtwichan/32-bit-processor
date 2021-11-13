@@ -1,0 +1,4 @@
+verilog work "Decoder4to16.v"
+verilog work "RegisterBank.v"
+verilog work "simulationFoRegisters.v"
+verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

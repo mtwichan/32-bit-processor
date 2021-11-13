@@ -1,0 +1,4 @@
+verilog isim_temp "Decoder4to16.v"
+verilog isim_temp "RegisterBank.v"
+verilog isim_temp "simulationFoRegisters.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
