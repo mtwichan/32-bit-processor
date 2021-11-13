@@ -1,5 +1,5 @@
 ISim log file
-Running: /home/retr0/VERILOGGClass/RegisterBank/TestMultiplexer_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/retr0/VERILOGGClass/RegisterBank/TestMultiplexer_isim_beh.wdb 
+Running: /home/retr0/VERILOGGClass/RegisterBank/TestReg_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/retr0/VERILOGGClass/RegisterBank/TestReg_isim_beh.wdb 
 ISim P.20131013 (signature 0xfbc00daa)
 WARNING: A WEBPACK license was found.
 WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
@@ -11,19 +11,4 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
-output=         0
-output=         1
-output=         2
-output=         3
-output=         4
-output=         5
-output=         6
-output=         7
-output=         8
-output=         9
-output=        10
-output=        20
-output=        30
-output=        40
-output=        50
-output=        60
+# exit 0

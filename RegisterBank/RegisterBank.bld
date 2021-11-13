@@ -5,4 +5,3 @@ Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
 ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-3 RegisterBank.ngc
 RegisterBank.ngd
 
-Reading NGO file "/home/retr0/VERILOGGClass/RegisterBank/RegisterBank.ngc" ...
