@@ -10,22 +10,27 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0xfbc00daa */
-
-#define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
-#include <memory.h>
-#ifdef __GNUC__
-#include <stdlib.h>
-#else
-#include <malloc.h>
-#define alloca _alloca
-#endif
+
+struct XSI_INFO xsi_info;
 
 
 
-
-extern void work_m_03652472666590015344_2415336395_init()
+int main(int argc, char **argv)
 {
-	xsi_register_didat("work_m_03652472666590015344_2415336395", "isim/RegisterBank_isim_beh.exe.sim/work/m_03652472666590015344_2415336395.didat");
+    xsi_init_design(argc, argv);
+    xsi_register_info(&xsi_info);
+
+    xsi_register_min_prec_unit(-12);
+    work_m_07966685923572299824_1723761585_init();
+    work_m_01475727114062024473_1590022455_init();
+    work_m_16541823861846354283_2073120511_init();
+
+
+    xsi_register_tops("work_m_01475727114062024473_1590022455");
+    xsi_register_tops("work_m_16541823861846354283_2073120511");
+
+
+    return xsi_run_simulation(argc, argv);
+
 }

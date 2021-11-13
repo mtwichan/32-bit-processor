@@ -1,0 +1,10 @@
+Command line:
+   TestMultiplexer_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  45259
+
+Sat Nov 13 11:20:32 2021
+
+
+ Elaboration Time: 0.02 sec

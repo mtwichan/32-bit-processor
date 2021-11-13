@@ -1,24 +1,22 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/retr0/VERILOGGClass/RegisterBank/simulationFoRegisters_isim_beh.exe -prj /home/retr0/VERILOGGClass/RegisterBank/simulationFoRegisters_beh.prj work.simulationFoRegisters work.glbl 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/retr0/VERILOGGClass/RegisterBank/TestMultiplexer_isim_beh.exe -prj /home/retr0/VERILOGGClass/RegisterBank/TestMultiplexer_beh.prj work.TestMultiplexer work.glbl 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/Decoder4to16.v" into library work
-Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/RegisterBank.v" into library work
-Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/simulationFoRegisters.v" into library work
+Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/MUX161.v" into library work
+Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/TestMultiplexer.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 82936 KB
-Fuse CPU Usage: 1610 ms
-Compiling module Decoder4to16
-Compiling module RegisterBank
-Compiling module simulationFoRegisters
+Fuse CPU Usage: 1650 ms
+Compiling module MUX161
+Compiling module TestMultiplexer
 Compiling module glbl
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 4 Verilog Units
-Built simulation executable /home/retr0/VERILOGGClass/RegisterBank/simulationFoRegisters_isim_beh.exe
-Fuse Memory Usage: 643128 KB
-Fuse CPU Usage: 1620 ms
-GCC CPU Usage: 390 ms
+Compiled 3 Verilog Units
+Built simulation executable /home/retr0/VERILOGGClass/RegisterBank/TestMultiplexer_isim_beh.exe
+Fuse Memory Usage: 643136 KB
+Fuse CPU Usage: 1660 ms
+GCC CPU Usage: 360 ms

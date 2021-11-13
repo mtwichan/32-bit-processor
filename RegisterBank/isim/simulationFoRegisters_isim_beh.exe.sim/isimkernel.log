@@ -1,13 +1,13 @@
 Command line:
    simulationFoRegisters_isim_beh.exe
      -simmode  gui
-     -simrunnum  2
-     -socket  34659
+     -simrunnum  0
+     -socket  46353
 
-Sat Nov 13 10:57:36 2021
+Sat Nov 13 11:14:45 2021
 
 
- Elaboration Time: 0.03 sec
+ Elaboration Time: 0.02 sec
 
  Current Memory Usage: 192.815 Meg
 
@@ -21,9 +21,9 @@ Sat Nov 13 10:57:36 2021
  Total Scalar Nets and Variables : 133
 Total Line Count : 53
 
- Total Simulation Time: 0.05 sec
+ Total Simulation Time: 0.03 sec
 
  Current Memory Usage: 268.317 Meg
 
-Sat Nov 13 10:57:43 2021
+Sat Nov 13 11:14:52 2021
 
