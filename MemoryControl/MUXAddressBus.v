@@ -18,8 +18,24 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module MUXAddressBus(
-    );
+module MUXAddressBus(select,addBusDataAccess,pcInstructionAccess,AdressBus);
+	input select;
+	input [31:0] addBusDataAccess, pcInstructionAccess;
+	output [31:0] AdressBus;
+	
+	always@ (select)
+		begin
+		if(select == 0)
+			begin
+			AdressBus<=pcInstructionAccess;
+			end
+		else
+			begin
+			AdressBus <= addBusDataAccess;
+			end
+		end
+		
+
 
 
 endmodule

@@ -18,8 +18,8 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module TopLevelMemoryControl(
-    );
-
+module TopLevelMemoryControl(src1,src2,opCode,RW,AddbusDataAcess,
+							dataBusIn,dataBusOut,dataOutLDR,PC);
+							
 
 endmodule

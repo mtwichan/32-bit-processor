@@ -18,8 +18,24 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module MUXLDR(
-    );
+module MUXLDR(select,fromRam,fromALU,toRegisters);
+	input select;
+	input [31:0] fromRam, fromALU;
+	output [31:0] toRegisters;
+	
+	always@ (select)
+		begin
+		if(select == 0)
+			begin
+			toRegisters<=fromALU;
+			end
+		else
+			begin
+			toRegisters <= fromRam;
+			end
+		end
+		
 
+		
 
 endmodule
