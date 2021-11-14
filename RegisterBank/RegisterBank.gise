@@ -22,7 +22,13 @@
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="RegisterBank.xise"/>
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="Decoder4to16_isim_beh.exe"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="MUX161_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="MUX161_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PLEASEWORK_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="PLEASEWORK_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="PLEASEWORK_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="PLEASEWORK_stx_beh.prj"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NGDBUILD_LOG" xil_pn:name="RegisterBank.bld"/>
     <file xil_pn:fileType="FILE_CMD_LOG" xil_pn:name="RegisterBank.cmd_log"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_LSO" xil_pn:name="RegisterBank.lso"/>
@@ -42,6 +48,8 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_UNROUTES" xil_pn:name="RegisterBank.unroutes" xil_pn:subbranch="Par"/>
     <file xil_pn:fileType="FILE_XPI" xil_pn:name="RegisterBank.xpi"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="RegisterBank.xst"/>
+    <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RegisterBank_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="RegisterBank_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="RegisterBank_guide.ncd" xil_pn:origination="imported"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="RegisterBank_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="RegisterBank_map.map" xil_pn:subbranch="Map"/>
@@ -54,6 +62,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_PAD_TXT_REPORT" xil_pn:name="RegisterBank_pad.txt" xil_pn:subbranch="Par"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="RegisterBank_par.xrpt"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="RegisterBank_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_HTML" xil_pn:name="RegisterBank_summary.html"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="RegisterBank_summary.xml"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="RegisterBank_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="RegisterBank_xst.xrpt"/>
@@ -65,6 +74,10 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TestReg_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TestReg_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TestReg_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopModuleTestRegisterBank_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TopModuleTestRegisterBank_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TopModuleTestRegisterBank_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopModuleTestRegisterBank_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="_ngo"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/map.xmsgs"/>
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/ngdbuild.xmsgs"/>
@@ -77,6 +90,7 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="simulationFoRegisters_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="simulationFoRegisters_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="singleRegister32_isim_beh.exe"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="testDecoder_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="testDecoder_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="webtalk_pn.xml"/>
@@ -88,23 +102,26 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1636828557" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1636828557">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1636834185" xil_pn:in_ck="-820197619016837910" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1636834185">
+    <transform xil_pn:end_ts="1636865398" xil_pn:in_ck="2252279534963102363" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1636865398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="Decoder4to16.v"/>
       <outfile xil_pn:name="MUX161.v"/>
+      <outfile xil_pn:name="PLEASEWORK.v"/>
       <outfile xil_pn:name="RegisterBank.v"/>
       <outfile xil_pn:name="Registers.v"/>
       <outfile xil_pn:name="TestMultiplexer.v"/>
       <outfile xil_pn:name="TestReg.v"/>
+      <outfile xil_pn:name="singleRegister32.v"/>
       <outfile xil_pn:name="testDecoder.v"/>
     </transform>
-    <transform xil_pn:end_ts="1636833793" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-5888321424098893547" xil_pn:start_ts="1636833793">
+    <transform xil_pn:end_ts="1636865228" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6167977636982661748" xil_pn:start_ts="1636865228">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1636833793" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-1547184763989720365" xil_pn:start_ts="1636833793">
+    <transform xil_pn:end_ts="1636865228" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="1254706287961186866" xil_pn:start_ts="1636865228">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -112,48 +129,41 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1636834147" xil_pn:in_ck="-820197619016837910" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1636834147">
+    <transform xil_pn:end_ts="1636865398" xil_pn:in_ck="2252279534963102363" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1636865398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="Decoder4to16.v"/>
       <outfile xil_pn:name="MUX161.v"/>
+      <outfile xil_pn:name="PLEASEWORK.v"/>
       <outfile xil_pn:name="RegisterBank.v"/>
       <outfile xil_pn:name="Registers.v"/>
       <outfile xil_pn:name="TestMultiplexer.v"/>
       <outfile xil_pn:name="TestReg.v"/>
+      <outfile xil_pn:name="singleRegister32.v"/>
       <outfile xil_pn:name="testDecoder.v"/>
     </transform>
-    <transform xil_pn:end_ts="1636834150" xil_pn:in_ck="-820197619016837910" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="8443737673231578025" xil_pn:start_ts="1636834147">
+    <transform xil_pn:end_ts="1636865400" xil_pn:in_ck="2252279534963102363" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4243339797344578887" xil_pn:start_ts="1636865398">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="TestReg_beh.prj"/>
-      <outfile xil_pn:name="TestReg_isim_beh.exe"/>
+      <outfile xil_pn:name="PLEASEWORK_beh.prj"/>
+      <outfile xil_pn:name="PLEASEWORK_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1636834150" xil_pn:in_ck="-4411032575734925245" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="8252252348947274380" xil_pn:start_ts="1636834150">
+    <transform xil_pn:end_ts="1636865400" xil_pn:in_ck="-6547238420061479797" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="412130018732459306" xil_pn:start_ts="1636865400">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="TestReg_isim_beh.wdb"/>
+      <outfile xil_pn:name="PLEASEWORK_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1636828053" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1636828053">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
     <transform xil_pn:end_ts="1636828053" xil_pn:name="TRAN_schematicsToHdl" xil_pn:prop_ck="7441849245090126326" xil_pn:start_ts="1636828053">
       <status xil_pn:value="SuccessfullyRun"/>
@@ -179,20 +189,16 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1636833782" xil_pn:in_ck="-3780919044736582417" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-2596651631927534386" xil_pn:start_ts="1636833773">
-      <status xil_pn:value="SuccessfullyRun"/>
+    <transform xil_pn:end_ts="1636865335" xil_pn:in_ck="-5229032483799265697" xil_pn:name="TRANEXT_xstsynthesize_spartan6" xil_pn:prop_ck="-2596651631927534386" xil_pn:start_ts="1636865333">
+      <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="InputChanged"/>
       <outfile xil_pn:name="RegisterBank.lso"/>
       <outfile xil_pn:name="RegisterBank.ngc"/>
       <outfile xil_pn:name="RegisterBank.ngr"/>
       <outfile xil_pn:name="RegisterBank.prj"/>
-      <outfile xil_pn:name="RegisterBank.stx"/>
-      <outfile xil_pn:name="RegisterBank.syr"/>
       <outfile xil_pn:name="RegisterBank.xst"/>
+      <outfile xil_pn:name="RegisterBank_beh.prj"/>
       <outfile xil_pn:name="RegisterBank_stx_beh.prj"/>
-      <outfile xil_pn:name="RegisterBank_xst.xrpt"/>
       <outfile xil_pn:name="_xmsgs/xst.xmsgs"/>
       <outfile xil_pn:name="webtalk_pn.xml"/>
       <outfile xil_pn:name="xst"/>
@@ -204,7 +210,6 @@
     <transform xil_pn:end_ts="1636833785" xil_pn:in_ck="5438312040235917991" xil_pn:name="TRANEXT_ngdbuild_FPGA" xil_pn:prop_ck="600423395728965568" xil_pn:start_ts="1636833782">
       <status xil_pn:value="AbortedRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
       <outfile xil_pn:name="RegisterBank.bld"/>
       <outfile xil_pn:name="RegisterBank.ngd"/>
       <outfile xil_pn:name="RegisterBank_ngdbuild.xrpt"/>
@@ -235,7 +240,7 @@
     </transform>
     <transform xil_pn:end_ts="1636829820" xil_pn:in_ck="5438312040235917860" xil_pn:name="TRAN_postRouteTrce" xil_pn:prop_ck="445577401284416185" xil_pn:start_ts="1636829814">
       <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="NotReadyToRun"/>
+      <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>

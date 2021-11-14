@@ -5,7 +5,8 @@ module MUX161(select,out,q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q
 	output reg [31:0] out;
 	
 	
-  always @ *
+  always @ (select,q0, q1, q2, q3, q4, q5, q6, q7,
+            q8, q9, q10, q11, q12, q13, q14, q15)
   begin
     case (select)                                                    
 		4'b0000 : out = q0;
@@ -24,6 +25,7 @@ module MUX161(select,out,q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q
 		4'b1101 : out = q13;
 		4'b1110 : out = q14;
 		4'b1111 : out = q15; 
+		default : out = 4'bzzzz; 
     endcase
   end
 

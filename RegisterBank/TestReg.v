@@ -50,8 +50,7 @@ module TestReg;
 	// Instantiate the Unit Under Test (UUT)
 	Registers uut (
 		.select(select), 
-		.Din(Din), 
-		.rst(rst), 
+		.Din(Din),
 		.q0(q0), 
 		.q1(q1), 
 		.q2(q2), 
@@ -74,7 +73,6 @@ module TestReg;
 		// Initialize Inputs
 		select = 0;
 		Din = 0;
-		rst = 0;
 
 		// Wait 100 ns for global reset to finish
 		#100;
