@@ -20,6 +20,6 @@ module Ram(enable, read_write, fetch_address, address, data_in, data_out, fetch_
 				mem[address] = data_in; // write -> STR
 		else
 			data_out = 32'bz;
-		fetch_out = mem[fetch_address]; // always write to instruction fetch
 	end
+	assign fetch_out = mem[fetch_address]; // always read to instruction fetch
 endmodule
