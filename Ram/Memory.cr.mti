@@ -1,0 +1,15 @@
+C:/Users/Dell/Desktop/School/ENGR468/Test_Ram_Read.v {1 {vlog -work work -stats=none {C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Read.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_Ram_Read
+
+Top level modules:
+	Test_Ram_Read
+
+} {} {}} C:/Users/Dell/Desktop/School/ENGR468/Test_Ram_Write.v {1 {vlog -work work -stats=none {C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Write.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Test_Ram_Write
+
+Top level modules:
+	Test_Ram_Write
+
+} {} {}}

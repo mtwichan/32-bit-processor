@@ -1,0 +1,131 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Dell/Desktop/School/APSC262/LAB5
+vDecoder
+!s110 1636854634
+!i10b 1
+!s100 1J9K:dL@FEa]e^T>b1Xi40
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Il0@i`@GUj1`noo`FklncL1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Dell/Desktop/School/ENGR468
+w1636854629
+8C:\Users\Dell\Desktop\School\ENGR468\Decoder.v
+FC:\Users\Dell\Desktop\School\ENGR468\Decoder.v
+!i122 1
+L0 1 7
+Z3 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1636854634.000000
+!s107 C:\Users\Dell\Desktop\School\ENGR468\Decoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Dell\Desktop\School\ENGR468\Decoder.v|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@decoder
+vRam
+!s110 1636881411
+!i10b 1
+!s100 W;ERALl;Ha3oClZ<OXC`G1
+R0
+I7D6FSi1lTo:UfUaI0mo013
+R1
+R2
+w1636881403
+8C:\Users\Dell\Desktop\School\ENGR468\Ram.v
+FC:\Users\Dell\Desktop\School\ENGR468\Ram.v
+!i122 14
+L0 1 25
+R3
+r1
+!s85 0
+31
+!s108 1636881411.000000
+!s107 C:\Users\Dell\Desktop\School\ENGR468\Ram.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Dell\Desktop\School\ENGR468\Ram.v|
+!i113 1
+R4
+R5
+n@ram
+vTest_Decoder
+!s110 1636855660
+!i10b 1
+!s100 mKH?85>Nn92Y^X<NDizK`2
+R0
+IP5YQVYM?;e^94EUXLnVbZ3
+R1
+R2
+w1636855649
+8C:\Users\Dell\Desktop\School\ENGR468\Test_Decoder.v
+FC:\Users\Dell\Desktop\School\ENGR468\Test_Decoder.v
+!i122 3
+L0 1 17
+R3
+r1
+!s85 0
+31
+!s108 1636855660.000000
+!s107 C:\Users\Dell\Desktop\School\ENGR468\Test_Decoder.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Dell\Desktop\School\ENGR468\Test_Decoder.v|
+!i113 1
+R4
+R5
+n@test_@decoder
+vTest_Ram_Read
+!s110 1636879885
+!i10b 1
+!s100 n:_I;^<UWc@;[06dPe>>[0
+R0
+Ic`_]]1M0DJ:zce50O<78c3
+R1
+R2
+w1636879876
+8C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Read.v
+FC:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Read.v
+!i122 10
+L0 1 28
+R3
+r1
+!s85 0
+31
+!s108 1636879884.000000
+!s107 C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Read.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Read.v|
+!i113 1
+R4
+R5
+n@test_@ram_@read
+vTest_Ram_Write
+!s110 1636880390
+!i10b 1
+!s100 C@1bKen[D`D2j]nm[@mo^0
+R0
+IFKV=noQh5QKco:f;m_`m20
+R1
+R2
+w1636880386
+8C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Write.v
+FC:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Write.v
+!i122 11
+L0 1 20
+R3
+r1
+!s85 0
+31
+!s108 1636880390.000000
+!s107 C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Write.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\Dell\Desktop\School\ENGR468\Test_Ram_Write.v|
+!i113 1
+R4
+R5
+n@test_@ram_@write
