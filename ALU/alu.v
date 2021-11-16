@@ -1,10 +1,10 @@
-module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, flags, result);
+module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, result);
   input sbit;
   input [2:0] srcontrol;
-  input [3:0] cond, opcode;
+  input [3:0] cond, opcode, inflags; // {N, Z, C, V}
   input [15:0] imvalue;
   input [31:0] in1, in2;
-  output [3:0] flags; // {N, Z, C, V}
+  output [3:0] outflags; // {N, Z, C, V}
   output reg [31:0] result;
   reg cond_met;
   reg [3:0] opcode_interim;
@@ -20,21 +20,21 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, flags, result);
 		
     case(cond)
       // equal; Z = 1
-      4'b0001: cond_met = (cmp_wire[2])? 1'b1 : 1'b0;
+      4'b0001: cond_met = (inflags[2])? 1'b1 : 1'b0;
       // greater than; Z = 0 and N = V
-      4'b0010: cond_met = (!cmp_wire[2])? ((cmp_wire[3] == cmp_wire[0])? 1'b1 : 1'b0) : 1'b0;
+      4'b0010: cond_met = (!inflags[2])? ((inflags[3] == inflags[0])? 1'b1 : 1'b0) : 1'b0;
       // less than; Z = 0 and N != V
-      4'b0011: cond_met = (!cmp_wire[2])? ((cmp_wire[3]^cmp_wire[0])? 1'b1 : 1'b0) : 1'b0;
+      4'b0011: cond_met = (!inflags[2])? ((inflags[3]^inflags[0])? 1'b1 : 1'b0) : 1'b0;
       // greater than or equal to; Z = 0/1 and N = V
-      4'b0100: cond_met = (cmp_wire[3] == cmp_wire[0])? 1'b1 : 1'b0;
+      4'b0100: cond_met = (inflags[3] == inflags[0])? 1'b1 : 1'b0;
       // less than or equal to; Z = 0/1 and N != V
-      4'b0101: cond_met = (cmp_wire[3]^cmp_wire[0])? 1'b1 : 1'b0;
+      4'b0101: cond_met = (inflags[3]^inflags[0])? 1'b1 : 1'b0;
       // unsigned higher; Z = 0 and C = 1
-      4'b0110: cond_met = (!cmp_wire[2])? ((cmp_wire[1])? 1'b1 : 1'b0) : 1'b0;
+      4'b0110: cond_met = (!inflags[2])? ((inflags[1])? 1'b1 : 1'b0) : 1'b0;
       // unsigned lower; C = 0
-      4'b0111: cond_met = (!cmp_wire[1])? 1'b1 : 1'b0;
+      4'b0111: cond_met = (!inflags[1])? 1'b1 : 1'b0;
       // unsigned higher or same; C = 1
-      4'b1000: cond_met = (cmp_wire[1])? 1'b1 : 1'b0;
+      4'b1000: cond_met = (inflags[1])? 1'b1 : 1'b0;
       default: cond_met = 1'b1;
     endcase
     
@@ -44,7 +44,6 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, flags, result);
     else
       ; // retain original opcode
   end
-  
   
   // check shift or rotate control bits
   always @*
@@ -60,7 +59,6 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, flags, result);
         default: in2_interim = in2;
       endcase
   end
-  
   
   // check op code bits
   always @*
@@ -94,7 +92,6 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, flags, result);
     endcase
   end    
 
-
   // call submodules
   Adder Add1(.in1(in1), .in2(in2_interim), .result(add_wire));
   Subtractor Sub1(.in1(in1), .in2(in2_interim), .result(sub_wire));
@@ -110,9 +107,8 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, flags, result);
   Load LDR1(.in(32'bx), .result(ldr_wire));
   Store STR1(.in(32'bx), .result(str_wire));
   Nop NOP1(.in(32'bx), .result(nop_wire));
-  Flags Flags1(.in1(in1), .in2(in2_interim), .s_bit(sbit), .opcode(opcode_interim), .op_result(result), .flags(flags));
+  Flags Flags1(.in1(in1), .in2(in2_interim), .s_bit(sbit), .opcode(opcode_interim), .op_result(result), .flags(outflags));
   Compare Cmp1(.in1(in1), .in2(in2_interim), .flags(cmp_wire));
-  
   
   // increment program counter
   PC pc1(.clk(1'b1), .reset(1'b1), .counter(count));
