@@ -21,10 +21,12 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "/home/retr0/VERILOGGClass/RegisterBank/PLEASEWORK.v";
+static const char *ng0 = "/home/retr0/VERILOGGClass/RegisterBank/TestRegisters5.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {1, 0};
-static unsigned int ng3[] = {0U, 15U};
+static int ng3[] = {4, 0};
+static int ng4[] = {19, 0};
+static unsigned int ng5[] = {0U, 15U};
 
 
 
@@ -82,20 +84,28 @@ LAB5:    xsi_set_current_line(56, ng0);
 
 LAB6:    xsi_set_current_line(59, ng0);
     t3 = ((char*)((ng3)));
-    t4 = (t0 + 1768);
-    xsi_vlogvar_assign_value(t4, t3, 0, 0, 32);
+    t4 = (t0 + 1608);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 4);
     xsi_set_current_line(60, ng0);
+    t2 = ((char*)((ng4)));
+    t3 = (t0 + 1768);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 32);
+    xsi_set_current_line(61, ng0);
     t2 = (t0 + 2808);
     xsi_process_wait(t2, 5000LL);
     *((char **)t1) = &&LAB7;
     goto LAB1;
 
-LAB7:    xsi_set_current_line(61, ng0);
-    t3 = ((char*)((ng2)));
-    t4 = (t0 + 1928);
-    xsi_vlogvar_assign_value(t4, t3, 0, 0, 4);
-    xsi_set_current_line(62, ng0);
-    t2 = ((char*)((ng1)));
+LAB7:    xsi_set_current_line(62, ng0);
+    t3 = ((char*)((ng5)));
+    t4 = (t0 + 1768);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 32);
+    xsi_set_current_line(63, ng0);
+    t2 = ((char*)((ng2)));
+    t3 = (t0 + 1928);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 4);
+    xsi_set_current_line(64, ng0);
+    t2 = ((char*)((ng3)));
     t3 = (t0 + 2088);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 4);
     goto LAB1;

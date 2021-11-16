@@ -8,12 +8,12 @@ Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/Registers.v" into
 Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/MUX161.v" into library work
 Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/Decoder4to16.v" into library work
 Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/RegisterBank.v" into library work
-Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/PLEASEWORK.v" into library work
+Analyzing Verilog file "/home/retr0/VERILOGGClass/RegisterBank/TestRegisters5.v" into library work
 Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 82928 KB
-Fuse CPU Usage: 1700 ms
+Fuse CPU Usage: 1710 ms
 Compiling module Decoder4to16
 Compiling module singleRegister32
 Compiling module Registers
@@ -27,4 +27,4 @@ Compiled 7 Verilog Units
 Built simulation executable /home/retr0/VERILOGGClass/RegisterBank/PLEASEWORK_isim_beh.exe
 Fuse Memory Usage: 643168 KB
 Fuse CPU Usage: 1720 ms
-GCC CPU Usage: 550 ms
+GCC CPU Usage: 580 ms

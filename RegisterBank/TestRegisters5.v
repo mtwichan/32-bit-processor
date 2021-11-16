@@ -56,10 +56,12 @@ module PLEASEWORK;
 		 dest = 1;
 		 Din = 1;
 		 #10
-		 Din = 4'bzzzz;
+		 dest = 4;
+		 Din = 19;
 		 #5
+		 Din = 4'bzzzz;
 		 srcadd1 = 1; 
-		 srcadd2 = 0; 
+		 srcadd2 = 4; 
 		// Add stimulus here
 
 	end

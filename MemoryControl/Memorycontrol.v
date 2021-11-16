@@ -13,6 +13,7 @@
 // STR R2, [R1] Store R2 at memory address R1 1010
 // NOP No Operation - Skip this instruction 1111
 //////////////////////////////////////////////////////////////////////////////////
+//
 module MemoryControl(src1, src2, op_code, ram_data_in, ram_data_out, ram_rw_flag, sel_ldr_bus, sel_add_bus, address_add_bus, data_ldr_out);
 	
 	input [3:0] op_code; // op code from instruction fetch
