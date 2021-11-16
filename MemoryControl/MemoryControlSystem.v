@@ -32,13 +32,13 @@ module MemoryControlSystem(ram_rw_flag, op_code, src1, src2, ram_data_in, ram_da
 
 	MUXAddressBus MUXAddressBusMember(
 		.sel_add_bus(sel_add_wire), 
-		.address_bus_in(address_add_wire), 
-		.address_bus_out(address_add_out),
+		.address_add_bus_in(address_add_wire), 
+		.address_add_bus_out(address_add_out),
 		.pc_instr_access(pc_instr_access)
 	);
 
 	MUXLDRBus MUXLDRBusMember(
-		.sel_ldr_bus(sel_ldr_wire), 
+		.sel_ldr_mux(sel_ldr_wire), 
 		.alu_result(alu_result), 
 		.ram_result(data_ldr_wire), 
 		.data_ldr_out(data_ldr_wire)
