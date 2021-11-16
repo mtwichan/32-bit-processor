@@ -49,7 +49,7 @@ module MemoryControl(src1, src2, op_code, ram_data_in, ram_data_out, ram_rw_flag
 				4'b1010: // Opcode -> STR
 					begin
 						// LDR MUX
-						sel_ldr_bus = 0'b1;
+						sel_ldr_bus = 1'b0;
 	
 						// ADD BUS MUX
 						sel_add_bus = 1'b1;
