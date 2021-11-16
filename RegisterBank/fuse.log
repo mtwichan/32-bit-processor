@@ -13,7 +13,7 @@ Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into li
 Starting static elaboration
 Completed static elaboration
 Fuse Memory Usage: 82928 KB
-Fuse CPU Usage: 1710 ms
+Fuse CPU Usage: 1640 ms
 Compiling module Decoder4to16
 Compiling module singleRegister32
 Compiling module Registers
@@ -26,5 +26,5 @@ Waiting for 1 sub-compilation(s) to finish...
 Compiled 7 Verilog Units
 Built simulation executable /home/retr0/VERILOGGClass/RegisterBank/PLEASEWORK_isim_beh.exe
 Fuse Memory Usage: 643168 KB
-Fuse CPU Usage: 1720 ms
-GCC CPU Usage: 580 ms
+Fuse CPU Usage: 1650 ms
+GCC CPU Usage: 550 ms
