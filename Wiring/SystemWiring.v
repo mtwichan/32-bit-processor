@@ -9,12 +9,13 @@ reg s_bit;
 reg [3:0] cond, op_code, dest, src1, src2;	//condition bits, op code, destination bits
 reg [15:0] im_val				//immediate value
 reg [2:0] sr_crtl; 				//shift and rotate control bits
-wire rw; 					//read and write flag for ram
-wire [15:0] address; 				//address bus output
-wire [31:0] in1, in2, alu_out, data_ldr;	//outputs 1 and 2 from reg mux, alu result, data output from ldr mux 
+wire rw, sel_ldr, sel_add; 			//read and write flag for ram, select wires for LDR and address mux
+wire [15:0] address, add_wire; 			//address bus output, add bus data access
+wire [31:0] in1, in2, alu_out,data_ldr,ldr_wire;//outputs 1 and 2 from reg mux, alu result, data output from ldr mux, LDR data from ram
 wire [31:0] fetch_out,ram_data_in,ram_data_out;	//instruction fetch, ram data in and out
 wire [15:0] fetch_address; 			//not super sure about this, matthew will review
 wire [3:0] prevflags, currentflags; 		//NZCV clag updates from the ALU
+
 
 //separate intruction into its individul portions
 assign cond = instr[31:28];
@@ -44,8 +45,8 @@ ALU alu_comp(
 	.opcode(op_code),
 	.srcontrol(sr_crtl),
 	.imvalue(im_val),
-	.inflags(prevflags),//I'm assuming I dont have to input anything into the NZCV flags?
-	.outflags(currentflags),//are these correct?
+	.inflags(currentflags),//might need to be flipped
+	.outflags(prevflags),//are these correct?
 	.result(alu_out)
 	);
 
@@ -54,16 +55,31 @@ FlagsReg flag(
 	.currentflags(currentflags)
 	);
 
-MemoryControlSystem mem_comp(
-	.ram_rw_flag(rw),
-	.op_code(op_code),
-	.src1(in1),
-	.src2(in2),
-	.ram_data_in(ram_data_in),
-	.ram_data_out(ram_data_out),
-	.pc_instr_access,
-	.address_add_out,
-	.alu_result
+MemoryControl MemCtrl(
+	.src1(in1), 
+	.src2(in2), 
+	.ram_data_in(ram_data_in), 
+	.ram_data_out(ram_data_out), 
+	.op_code(op_code), 
+	.ram_rw_flag(rw), 
+	.sel_ldr_bus(sel_ldr), 
+	.sel_add_bus(sel_add), 
+	.address_add_bus(add_wire), 
+	.data_ldr_out(data_ldr) 
+	);
+
+MUXAddressBus MUXAdd(
+	.sel_add_bus(sel_add), 
+	.address_add_bus_in(add_wire), 
+	.address_add_bus_out(address),
+	.pc_instr_access(pc)
+	);
+
+MUXLDRBus MUXLDR(
+	.sel_ldr_mux(sel_ldr), 
+	.alu_result(alu_out), 
+	.ram_result(ldr_wire), 
+	.data_ldr_out(data_ldr)
 	);
 
 Ram ram_comp(
