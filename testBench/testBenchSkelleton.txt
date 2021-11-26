@@ -1,0 +1,9 @@
+input machineCode;
+
+// wire ?? ;
+
+
+
+#5
+
+
