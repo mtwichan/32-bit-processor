@@ -10,24 +10,49 @@ initial begin
 
 machineCode = 0;
 
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
-#5 machineCode = ;
+//MOV R3,#4
+#5 machineCode = 32'b00000110000110000000000000100000;
+//MOV R8,#4
+#5 machineCode = 32'b00000110010000000000000000100000;
+//CMP R3, R8 
+#5 machineCode = 32'b00001000000000011100000000000000;
+//ADDGT R1, R3, R8
+#5 machineCode = 32b'00100000000010011100000000000000;
+// MULEQ R2, R3, R8 LSR#1
+#5 machineCode = 32'b00010010000100011100000001000001 ;
+//SUBS R7, R8, R2
+#5 machineCode = 32'b00000001101111000001000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//MOV R9, #0
+#5 machineCode = 32'b00000110010010000000000000000000;
+//LDR R10, [R9]
+#5 machineCode = 32'b00001001010101001000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//MOV R11, #0
+#5 machineCode = 32'b00000110010110000000000000000000;
+//MOV R6, #26947
+#5 machineCode = 32'b00000110000100110100101000011000;
+//STR R6, [R11]
+#5 machineCode = 32'b00001010000001011011000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+//NOP
+#5 machineCode = 32'b00001111000000000000000000000000;
+
 end
 initial begin
     $monitor(,);
