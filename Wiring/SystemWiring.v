@@ -45,8 +45,8 @@ ALU alu_comp(
 	.opcode(op_code),
 	.srcontrol(sr_crtl),
 	.imvalue(im_val),
-	.inflags(currentflags),//might need to be flipped
-	.outflags(prevflags),//are these correct?
+	.inflags(currentflags),
+	.outflags(prevflags),
 	.result(alu_out)
 	);
 
