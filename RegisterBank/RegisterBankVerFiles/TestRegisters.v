@@ -25,12 +25,9 @@
 module TestRegisters;
 
 	// Outputs
-	wire ;
 
 	// Instantiate the Unit Under Test (UUT)
-	Registers uut (
-		.()
-	);
+
 
 	initial begin
 		// Initialize Inputs

@@ -121,4 +121,5 @@
    </ItemView>
    <SourceProcessView>000000ff0000000000000002000001510000012001000000060100000002</SourceProcessView>
    <CurrentView>Behavioral Simulation</CurrentView>
+   <CopyAdditionalFiles/>
 </Project>
