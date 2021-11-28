@@ -9,6 +9,7 @@ module FlagsReg(prevflags, currentflags);
   always @(prevflags)
   begin
     currentflags = prevflags;
+    $display("Flags: %b", currentflags); // Display flags
   end
 endmodule
     

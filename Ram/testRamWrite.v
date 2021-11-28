@@ -1,4 +1,4 @@
-module Test_Ram_Write;
+module test_ram_write;
     parameter DATA_SIZE = 32, ADDRESS_SIZE = 16;
     reg enable, read_write;
     reg [DATA_SIZE - 1: 0] data_in;
@@ -16,6 +16,6 @@ module Test_Ram_Write;
     #5 enable =1;   read_write=0;	address=16'd1;	fetch_address=16'd0;    data_in =32'b11111111111111111111111111111111;
     #10
 
-    $writememb("test_ram_write.txt", Test_Ram.mem);
+    $writememb("Ram/test_data_files/test_ram_write.txt", Test_Ram.mem);
     end
 endmodule

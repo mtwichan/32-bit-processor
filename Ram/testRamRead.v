@@ -1,4 +1,4 @@
-module Test_Ram_Read;
+module test_ram_read;
 	parameter DATA_SIZE = 32, ADDRESS_SIZE = 16;
 	reg enable, read_write;
 	reg [DATA_SIZE - 1:0] data_in;
@@ -12,7 +12,7 @@ module Test_Ram_Read;
 	initial
 	begin
 
-		$readmemb("test_ram_read.txt", Test_Ram.mem);
+		$readmemb("TestData/test_ram_read.txt", Test_Ram.mem);
 		enable = 0;	read_write = 0;		address = 15'd0;	fetch_address = 15'd0;  
 	#5	enable = 1;	read_write = 1;		address = 15'd0;	fetch_address = 15'd0;
 	#5	enable = 1;	read_write = 1;		address = 15'd1;	fetch_address = 15'd3;

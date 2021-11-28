@@ -1,4 +1,4 @@
-module 
+module test_processor
 
 reg [31:0] machine_code;
 
