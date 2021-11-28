@@ -1,9 +1,10 @@
-module SysWiring(instr);//inputs and outs to the system?? not sure how we will be outputing everything needed 
+module Processor(fetch_address);//inputs and outs to the system?? not sure how we will be outputing everything needed 
 //assumed seperate code needed to implement into the registers in order to output to the monitor.
 //do we need some more code in here to fetch the next instruction??
 
 //define variables
-input [31:0] instr;				//input instruction
+input [15:0] fetch_address;     // PC will iterate the fetch address
+wire [31:0] instr;				//input instruction
 reg [7:0] pc;					//pc instruction access, possibly an input??
 reg s_bit; 
 reg [3:0] cond, op_code, dest, src1, src2;	//condition bits, op code, destination bits
@@ -11,21 +12,23 @@ reg [15:0] im_val;				//immediate value
 reg [2:0] sr_crtl; 				//shift and rotate control bits
 wire rw, sel_ldr, sel_add; 			//read and write flag for ram, select wires for LDR and address mux
 wire [15:0] address, add_wire; 			//address bus output, add bus data access
-wire [31:0] in1, in2, alu_out,data_ldr,ldr_wire;//outputs 1 and 2 from reg mux, alu result, data output from ldr mux, LDR data from ram
-wire [31:0] fetch_out,ram_data_in,ram_data_out;	//instruction fetch, ram data in and out
-wire [15:0] fetch_address; 			//not super sure about this, matthew will review
+wire [31:0] in1, in2, alu_out, data_ldr,ldr_wire;//outputs 1 and 2 from reg mux, alu result, data output from ldr mux, LDR data from ram
+wire [31:0] ram_data_in,ram_data_out;	//instruction fetch, ram data in and out
 wire [3:0] prevflags, currentflags; 		//NZCV clag updates from the ALU
 
-
 //separate intruction into its individul portions
-assign cond = instr[31:28];
-assign op_code = instr[27:24];
-assign s_bit = instr[23];
-assign dest = instr[22:19];
-assign src1 = instr[18:15];
-assign src2 = instr[14:11];
-assign im_val = instr[18:3];
-assign sr_crtl = instr[2:0];
+always @ (instr)
+begin
+	cond <= instr[31:28];
+	op_code <= instr[27:24];
+	s_bit <= instr[23];
+	dest <= instr[22:19];
+	src1 <= instr[18:15];
+	src2 <= instr[14:11];
+	im_val <= instr[18:3];
+	sr_crtl <= instr[2:0];	
+end
+
 
 //instantiate all modules and connect wires (I don't think order matters here?)
 RegisterBank reg_comp(
@@ -86,9 +89,9 @@ Ram ram_comp(
 	.read_write(rw),
 	.fetch_address(fetch_address),
 	.address(address),
-	.data_in(ram_data_in),//do these need to be switched?
-	.data_out(ram_data_out),//do these need to be switched?
-	.fetch_out(fetch_out)
+	.data_in(ram_data_out),//do these need to be switched?
+	.data_out(ram_data_in),//do these need to be switched?
+	.fetch_out(instr)
 	);
 
 endmodule

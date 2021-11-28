@@ -90,6 +90,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
       4'b1111: result = nop_wire;
       default: result = 32'bx;
     endcase
+    $display("ALU Result: %b", result); // Display ALU Result
   end    
 
   // call submodules
