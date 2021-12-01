@@ -1,4 +1,4 @@
-module MUXAddressBus(sel_add_bus, address_add_bus_in, address_add_bus_out);
+module MUXAddressBus(sel_add_bus, address_add_bus_in, address_add_bus_out, pc_addr);
 	
 	input sel_add_bus; // Select (LDR=1 OR STR=1)
 	input [15:0] address_add_bus_in; 

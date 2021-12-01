@@ -74,7 +74,8 @@ MemoryControl MemCtrl(
 MUXAddressBus MUXAdd(
 	.sel_add_bus(sel_add), 
 	.address_add_bus_in(add_wire), 
-	.address_add_bus_out(address)
+	.address_add_bus_out(address),
+	.pc_addr(pc_counter)
 	);
 
 MUXLDRBus MUXLDR(
