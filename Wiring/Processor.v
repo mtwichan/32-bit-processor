@@ -1,11 +1,10 @@
-module Processor(pc_counter, loaded_mem);//inputs and outs to the system?? not sure how we will be outputing everything needed 
+module Processor(pc_counter);//inputs and outs to the system?? not sure how we will be outputing everything needed 
 //assumed seperate code needed to implement into the registers in order to output to the monitor.
 //do we need some more code in here to fetch the next instruction??
 
 //define variables
-input [7:0] pc_counter;			//pc instruction access, possibly an input??
-input reg [31:0] mem [0: (1 << 16) - 1]; // 2^16 words * 32 bits memory
 wire [31:0] instr;				//input instruction
+input [7:0] pc_counter;					//pc instruction access, possibly an input??
 reg s_bit; 
 reg [3:0] cond, op_code, dest, src1, src2;	//condition bits, op code, destination bits
 reg [15:0] im_val;				//immediate value
