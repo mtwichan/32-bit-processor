@@ -4,25 +4,30 @@ module test_processor;
 
 	localparam period = 10; // 10 * timescale = 10 * 1 ns  = 10ns
 
-	reg [15:0] fetch_address;
+	reg [7:0] pc_counter = 8'd0;
+	reg [31:0] mem [0: (1 << 16) - 1]; // 2^16 words * 32 bits memory
 
-	initial // TODO: Make it so that we can dynamically set the # of fetch cycles OR for loop
+	initial begin // load data into memory up front -> https://projectf.io/posts/initialize-memory-in-verilog/
+		$display("Loading instruction set into memory ...");
+		$readmemb("TestData/test_ram_read_alu.txt", mem); // Change file to load here
+	end
+
+	always 
 	begin
-				fetch_address = 15'd0;  
-		#period	fetch_address = 15'd1;
-		#period	fetch_address = 15'd2;
-		#period	fetch_address = 15'd3;
-		#period	fetch_address = 15'd4;
-		#period	fetch_address = 15'd5;
-		#period	fetch_address = 15'd6;
-		#period	fetch_address = 15'd7;
+		#period pc_counter = pc_counter + 1;
 	end
 
 	initial
 	begin
-		$monitor($time, "FetchAddress: %d" , fetch_address);
+		$monitor($time, "PC : %d" , pc_counter);
 	end
 
-	Processor processor(.fetch_address(fetch_address));
+	initial 
+	begin
+		#100 $finish;		
+	end
+	
+	Processor processor(.pc_counter(pc_counter), .loaded_mem(mem));
+
 
 endmodule

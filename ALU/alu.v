@@ -10,11 +10,11 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   reg [3:0] opcode_interim;
   reg [31:0] in2_interim;
   wire [3:0] cmp_wire;
-  wire [7:0] count = 8'b00000000;
+  // wire [7:0] count = 8'b00000000;
   wire [31:0] add_wire, sub_wire, mul_wire, and_wire, or_wire, xor_wire, lsr_wire, lsl_wire, rrot_wire, srcontrol_wire, movn_wire, movreg_wire, ldr_wire, str_wire, nop_wire;
 		  
   // check condition bits
-  always @*
+  always @ (cond)
   begin
     opcode_interim = opcode;
 		
@@ -46,7 +46,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   end
   
   // check shift or rotate control bits
-  always @*
+  always @ (srcontrol)
   begin
       case(srcontrol)
         // logical shift right
@@ -61,7 +61,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   end
   
   // check op code bits
-  always @*
+  always @ (opcode_interim)
   begin
     case(opcode_interim)
       // addition
@@ -90,7 +90,6 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
       4'b1111: result = nop_wire;
       default: result = 32'bx;
     endcase
-    $display("ALU Result: %b", result); // Display ALU Result
   end    
 
   // call submodules
@@ -110,7 +109,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   Nop NOP1(.in(32'bx), .result(nop_wire));
   Flags Flags1(.in1(in1), .in2(in2_interim), .s_bit(sbit), .opcode(opcode_interim), .op_result(result), .flags(outflags));
   Compare Cmp1(.in1(in1), .in2(in2_interim), .flags(cmp_wire));
-  
+
   // increment program counter
-  PC pc1(.clk(1'b1), .reset(1'b1), .counter(count));
+  // PC pc1(.clk(1'b1), .reset(1'b1), .counter(count));
 endmodule

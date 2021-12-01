@@ -1,11 +1,11 @@
-module Processor(fetch_address);//inputs and outs to the system?? not sure how we will be outputing everything needed 
+module Processor(pc_counter, loaded_mem);//inputs and outs to the system?? not sure how we will be outputing everything needed 
 //assumed seperate code needed to implement into the registers in order to output to the monitor.
 //do we need some more code in here to fetch the next instruction??
 
 //define variables
-input [15:0] fetch_address;     // PC will iterate the fetch address
+input [7:0] pc_counter;			//pc instruction access, possibly an input??
+input reg [31:0] mem [0: (1 << 16) - 1]; // 2^16 words * 32 bits memory
 wire [31:0] instr;				//input instruction
-reg [7:0] pc;					//pc instruction access, possibly an input??
 reg s_bit; 
 reg [3:0] cond, op_code, dest, src1, src2;	//condition bits, op code, destination bits
 reg [15:0] im_val;				//immediate value
@@ -27,10 +27,11 @@ begin
 	src2 <= instr[14:11];
 	im_val <= instr[18:3];
 	sr_crtl <= instr[2:0];	
+	$display("Instruction: %b", instr);
 end
 
-
 //instantiate all modules and connect wires (I don't think order matters here?)
+
 RegisterBank reg_comp(
 	.dest(dest),
 	.Din(data_ldr),
@@ -74,8 +75,7 @@ MemoryControl MemCtrl(
 MUXAddressBus MUXAdd(
 	.sel_add_bus(sel_add), 
 	.address_add_bus_in(add_wire), 
-	.address_add_bus_out(address),
-	.pc_instr_access(pc)
+	.address_add_bus_out(address)
 	);
 
 MUXLDRBus MUXLDR(
@@ -87,7 +87,7 @@ MUXLDRBus MUXLDR(
 
 Ram ram_comp(
 	.read_write(rw),
-	.fetch_address(fetch_address),
+	.fetch_address(pc_counter),
 	.address(address),
 	.data_in(ram_data_out),//do these need to be switched?
 	.data_out(ram_data_in),//do these need to be switched?
