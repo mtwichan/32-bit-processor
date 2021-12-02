@@ -1,7 +1,0 @@
-verilog work "singleRegister32.v"
-verilog work "Registers.v"
-verilog work "MUX161.v"
-verilog work "Decoder4to16.v"
-verilog work "RegisterBank.v"
-verilog work "TestRegisters5.v"
-verilog work "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

@@ -90,9 +90,8 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
       4'b1111: result = nop_wire;
       default: result = 32'bx;
     endcase
-    $display("Result:", result);
   end    
-
+  
   // call submodules
   Adder Add1(.in1(in1), .in2(in2_interim), .result(add_wire));
   Subtractor Sub1(.in1(in1), .in2(in2_interim), .result(sub_wire));

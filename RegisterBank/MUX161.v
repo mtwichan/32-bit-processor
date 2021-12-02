@@ -3,10 +3,28 @@ module MUX161(select,out,q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q
 	input [3:0] select;
 	input [31:0] q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q13, q14, q15;
 	output reg [31:0] out;
+		always @ (*) 
+		begin
+			$display("select: %b", select);
+			$display("q0: %b", q0);
+			$display("q1: %b", q1);
+			$display("q2: %b", q2);
+			$display("q3: %b", q3);
+			$display("q4: %b", q4);
+			$display("q5: %b", q5);
+			$display("q6: %b", q6);
+			$display("q7: %b", q7);
+			$display("q8: %b", q8);
+			$display("q9: %b", q9);
+			$display("q10: %b", q10);
+			$display("q11: %b", q11);
+			$display("q12: %b", q12);
+			$display("q13: %b", q13);
+			$display("q14: %b", q14);
+			$display("q15: %b", q15);			
+		end
 	
-	
-  always @ (select,q0, q1, q2, q3, q4, q5, q6, q7,
-            q8, q9, q10, q11, q12, q13, q14, q15)
+  always @ (*)
   begin
     case (select)                                                    
 		4'b0000 : out = q0;

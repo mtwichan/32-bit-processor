@@ -1,11 +1,11 @@
-module SysWiring(instr);//inputs and outs to the system?? not sure how we will be outputing everything needed 
+module SysWiring(pc);//inputs and outs to the system?? not sure how we will be outputing everything needed 
 //assumed seperate code needed to implement into the registers in order to output to the monitor.
 //do we need some more code in here to fetch the next instruction??
 
 //define variables
 input [31:0] instr;				//input instruction
 reg [7:0] pc;					//pc instruction access, possibly an input??
-reg s_bit; 
+reg s_bit, pc_flag, reset; 
 reg [3:0] cond, op_code, dest, src1, src2;	//condition bits, op code, destination bits
 reg [15:0] im_val;				//immediate value
 reg [2:0] sr_crtl; 				//shift and rotate control bits
@@ -15,7 +15,6 @@ wire [31:0] in1, in2, alu_out,data_ldr,ldr_wire;//outputs 1 and 2 from reg mux, 
 wire [31:0] fetch_out,ram_data_in,ram_data_out;	//instruction fetch, ram data in and out
 wire [15:0] fetch_address; 			//not super sure about this, matthew will review
 wire [3:0] prevflags, currentflags; 		//NZCV clag updates from the ALU
-
 
 //separate intruction into its individul portions
 assign cond = instr[31:28];
@@ -84,11 +83,17 @@ MUXLDRBus MUXLDR(
 
 Ram ram_comp(
 	.read_write(rw),
-	.fetch_address(fetch_address),
+	.fetch_address(pc),
 	.address(address),
-	.data_in(ram_data_in),//do these need to be switched?
-	.data_out(ram_data_out),//do these need to be switched?
+	.data_in(ram_data_out),
+	.data_out(ram_data_in),
 	.fetch_out(fetch_out)
+	);
+
+ProgramCounter PC(
+	.reset(reset), 
+	.pc(pc),
+	.pc_flag
 	);
 
 endmodule

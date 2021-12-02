@@ -1,7 +1,0 @@
-Release 14.7 ngdbuild P.20131013 (lin64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
-
-Command Line: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -intstyle
-ise -dd _ngo -nt timestamp -i -p xc6slx9-ftg256-3 RegisterBank.ngc
-RegisterBank.ngd
-

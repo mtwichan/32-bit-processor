@@ -29,6 +29,15 @@ begin
 	$display("Instruction: %b", instr);
 end
 
+// assign cond = instr[31:28];
+// assign op_code = instr[27:24];
+// assign s_bit = instr[23];
+// assign dest = instr[22:19];
+// assign src1 = instr[18:15];
+// assign src2 = instr[14:11];
+// assign im_val = instr[18:3];
+// assign sr_crtl = instr[2:0];
+
 //instantiate all modules and connect wires (I don't think order matters here?)
 
 RegisterBank reg_comp(
@@ -87,7 +96,6 @@ MUXLDRBus MUXLDR(
 
 Ram ram_comp(
 	.read_write(rw),
-	.fetch_address(pc_counter),
 	.address(address),
 	.data_in(ram_data_out),//do these need to be switched?
 	.data_out(ram_data_in),//do these need to be switched?
