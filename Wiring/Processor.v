@@ -15,6 +15,8 @@ wire [31:0] in1, in2, alu_out, data_ldr,ldr_wire;//outputs 1 and 2 from reg mux,
 wire [31:0] ram_data_in,ram_data_out;	//instruction fetch, ram data in and out
 wire [3:0] prevflags, currentflags; 		//NZCV clag updates from the ALU
 
+wire [31:0] ram_pc_address;
+
 //separate intruction into its individul portions
 always @ (instr)
 begin
@@ -30,6 +32,19 @@ begin
 end
 
 //instantiate all modules and connect wires (I don't think order matters here?)
+ProgramCounter pc_comp(
+	.clk(clk),
+	.reset(reset),
+	.pc_count(pc_counter)
+);
+
+InstructionControl instruction_comp (
+	.clk(clk),
+	.pc_count(pc_counter),
+	.instruction_in(instr),
+	.instruction_out(),
+	.ram_pc_address_out(ram_pc_address)
+)
 
 RegisterBank reg_comp(
 	.dest(dest),
@@ -87,7 +102,7 @@ MUXLDRBus MUXLDR(
 
 Ram ram_comp(
 	.read_write(rw),
-	.fetch_address(pc_counter),
+	.fetch_address(ram_pc_address),
 	.address(address),
 	.data_in(ram_data_out),//do these need to be switched?
 	.data_out(ram_data_in),//do these need to be switched?
