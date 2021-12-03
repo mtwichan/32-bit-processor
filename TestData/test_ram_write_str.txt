@@ -1,7 +1,7 @@
 // memory data file (do not edit the following line - required for mem load use)
 // instance=/atestProcessorClk/processor_comp/ram_comp/mem
 // format=bin addressradix=h dataradix=b version=1.0 wordsperline=1 noaddress
-00000110010110000000000000000000
+00000000000000000110100101000011
 00000110001100110100101000011000
 00001010000001011011000000000000
 00001111000000000000000000000000

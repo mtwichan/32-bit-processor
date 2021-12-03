@@ -24,7 +24,5 @@ module Decoder4to16(in, out);
 			4'b1111: out = 16'b1000000000000000;
 			default: out = 16'b0000000000000000; 				 
 		endcase
-		$display("Decoder4to16 -> decoder in: %b", in);
-		$display("Decoder4to16 -> decoder out: %b", out);
 	end
 endmodule

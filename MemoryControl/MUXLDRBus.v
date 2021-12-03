@@ -13,7 +13,5 @@ module MUXLDRBus(sel_ldr_mux, ram_result, alu_result, data_ldr_out);
 				begin
 					data_ldr_out = alu_result; // opcode is not LDR -> store result from ALU
 				end
-			$display("MUXLDRBUS -> data_ldr_out: %b", data_ldr_out);
-			$display("MUXLDRBUS -> sel_ldr_mux: %b", sel_ldr_mux);
 		end
 endmodule

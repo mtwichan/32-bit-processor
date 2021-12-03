@@ -89,14 +89,6 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
       4'b1111: result = nop_wire;
       default: result = 32'bx;
     endcase
-    $display("ALU -> sbit: %b", sbit);
-    $display("ALU -> srcontrol: %b", srcontrol);
-    $display("ALU -> cond bits: %b", cond);
-    $display("ALU -> opcode: %b", opcode);
-    $display("ALU -> inflags: %b", inflags);
-    $display("ALU -> imvalue: %b", imvalue);
-    $display("ALU -> in2: %b", in2);
-    $display("ALU -> in1: %b", in1);
   end    
   
   // call submodules

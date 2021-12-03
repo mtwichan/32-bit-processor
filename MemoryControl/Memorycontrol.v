@@ -6,7 +6,7 @@
 // ORR R1, R2, R3 (R1=R2 OR R3) 0011
 // AND R1, R2, R3 (R1=R2 AND R3) 0100
 // EOR R1, R2, R3 (R1=R2 XOR R3) 0101
-// MOV R1, n Initialize R1 with a 16-bit immediate value n, 0 <= n <= (216 − 1) 0110
+// MOV R1, n Initialize R1 with a 16-bit immediate value n, 0 = n = (216 − 1) 0110
 // MOV R1, R2 Copy R2 to R1 0111
 // CMP R1, R2 Compare R1 with R2 and set the status flags 1000
 // LDR R2, [R1] Load R2 with the contents at memory address R1 1001
@@ -67,10 +67,12 @@ module MemoryControl(src1, src2, op_code, ram_data_in, ram_data_out, ram_rw_flag
 						
 						// ADD BUS MUX
 						sel_add_bus = 1'b0;
-
+						address_add_bus = 16'bx;
+						ram_data_out = 32'bx;
 						// RAM
 						ram_rw_flag = 1'bz;
 					end
 			endcase
+
 	end
 endmodule
