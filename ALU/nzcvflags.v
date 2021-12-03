@@ -27,24 +27,9 @@ module Flags(in1, in2, s_bit, opcode, op_result, flags);
 	                  // for overflow, addition result has overflow if the MSB is different than both input MSBs
 	                  flags[0] = (in1[31] == in2[31])? ((in1[31]^op_result[31])? 1'b1 : 1'b0) :  1'b0;
                   end
-        
-         // check carry and overflow for subtraction
- 	       4'b0001: begin
- 	          	       // for C, subtraction result has carry if in1 < in2 
-  	                 flags[1] = (in1 < in2)? 1'b1 : 1'b0;
- 	                  // for V, subtraction result has overflow if (-in1)-(+in2) > 0 or if (+in1)-(-in2) < 0
-  	                 temp_msb = {in1[31], in2[31], op_result[31]};
-  	                 flags[0] = (temp_msb == 3'b100)? 1'b1 : ((temp_msb == 3'b011)? 1'b1 : 1'b0);
- 	                end
  	                
  	       // multiplication instruction preserves V but C is meaningless so set it to zero
  	       4'b0010: flags[1] = 1'b0;
- 	       
- 	       // move instruction preserves V but not C
- 	       4'b0110: flags[1] = 1'b0;
- 	       
- 	       // move instruction preserves V but not C
- 	       4'b0111: flags[1] = 1'b0;
  	       
  	       // default case for other instructions
  	       default: begin
