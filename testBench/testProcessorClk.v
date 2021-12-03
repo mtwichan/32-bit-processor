@@ -1,28 +1,21 @@
 module atestProcessorClk;
 	reg clk, reset;
-	initial
+	
+	initial	
+    begin
+        clk = 0;
+        reset = 1;
+        #3 reset = 0;
+        #4 reset = 1;
+	#200 $finish; // 20 time units
+	end
+	
+    initial
 	begin
-		$display($time, "Testing processor");
+		$display($time, "Start processor ...");
 	end
-	
-	// initial
-	// begin
-		// $monitor($time, " clk=%b || reset=%b",
-			// clk,
-			// reset
-		// );
-	// end
-	
-	initial	begin
-	clk = 0;
-	reset = 1;
-	#3 reset = 0;
-	#4 reset = 1;
-	
-	#200 $finish; // Stop the simulation after 50 time units
-	end
-	
-	always #10 clk =~ clk; // How to create a clk pulses of period 10
+
+	always #10 clk =~ clk; // Run clock pulse every 10 time units
 	
 	
 	ProcessorClk processor_comp(

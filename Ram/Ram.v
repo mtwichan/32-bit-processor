@@ -32,6 +32,9 @@ module Ram(read_write, address, data_in, data_out, fetch_out);
 	begin
 		if (!read_write) 
 			mem[address] = data_in; 
+			$display("RAM -> data_in: %b", data_in);
+			$writememb("TestData/test_ram_write_str.txt", mem);
+
 	end
 
 endmodule

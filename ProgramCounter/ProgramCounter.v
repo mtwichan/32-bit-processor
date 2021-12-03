@@ -1,6 +1,6 @@
 module ProgramCounter(clk, reset, count, instruction_in, instruction_out);
 	input clk, reset;
-	output reg [7:0]  count; // 8-bit counter as specified in project description
+	output reg [7:0] count; // 8-bit counter as specified in project description
 
     input [31:0] instruction_in; // Instruction read from RAM
     output [31:0] instruction_out; // Instruction used by MAB, RBT and ALU

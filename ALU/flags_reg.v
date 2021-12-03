@@ -6,7 +6,7 @@ module FlagsReg(prevflags, currentflags);
   // prevflags will be the 'outflags' ALU output as these are the previous isntruction's flags
   // when the previous flags change, update the current flags
   
-  always @(prevflags)
+  always @ (prevflags)
   begin
     currentflags = prevflags;
     $display("FlagsReg -> Flags: %b", currentflags); // Display flags

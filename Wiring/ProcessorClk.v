@@ -137,8 +137,8 @@ MUXLDRBus MUXLDR(
 Ram ram_comp(
 	.read_write(rw),
 	.address(address),
-	.data_in(ram_data_out),//do these need to be switched?
-	.data_out(ram_data_in),//do these need to be switched?
+	.data_in(ram_data_out),
+	.data_out(ram_data_in),
 	.fetch_out(instr_next)
 	);
 
