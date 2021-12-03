@@ -4,7 +4,7 @@ module Compare(in1, in2, flags);
   reg [31:0] temp_res;
   reg [2:0] temp_msb;
   
-  always @*
+  always @ (*)
   begin
     temp_res = in1 - in2; // definition of CMP instruction
     flags[3] = (temp_res[31] == 1)? 1'b1 : 1'b0; // if the MSB = 1, it's neg

@@ -43,7 +43,7 @@ module RegisterBank(dest,Din,srcadd1,srcadd2,src1,src2, opcode);
 		.q15(registerBank[15]));
 
 	always @ (registerAddress, Din) begin
-		if (opcode != 4'b1111) begin
+		if ((opcode != 4'b1111)) begin
 			case (registerAddress)
 				16'b0000000000000001: begin
 					registerBank[0] = Din;	

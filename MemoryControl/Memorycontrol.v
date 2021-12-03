@@ -69,7 +69,7 @@ module MemoryControl(src1, src2, op_code, ram_data_in, ram_data_out, ram_rw_flag
 						sel_add_bus = 1'b0;
 
 						// RAM
-						ram_rw_flag = 1'b0;
+						ram_rw_flag = 1'bz;
 					end
 			endcase
 	end

@@ -15,5 +15,6 @@ module MUXAddressBus(sel_add_bus, address_add_bus_in, address_add_bus_out, pc_ad
 				begin
 					address_add_bus_out = pc_addr;
 				end
+			$display("MUXAddressBus -> address_add_bus_out: %b", address_add_bus_out);
 		end
 endmodule

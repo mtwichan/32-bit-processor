@@ -12,12 +12,11 @@ module Ram(read_write, address, data_in, data_out, fetch_out);
 
 	initial begin // load data into memory up front -> https://projectf.io/posts/initialize-memory-in-verilog/
 		$display("Loading instruction set into memory ...");
-		$readmemb("TestData/test_ram_read_str.txt", mem); // Change file to load here
+		$readmemb("TestData/test_ram_read_alu.txt", mem); // Change file to load here
 		fetch_out = mem[0];
 	end
 
 	assign data_out = read_write ? mem[address] : 32'bz; // read -> LDR - 1/2 line data in and out
-	// assign fetch_out = mem[address]; // always read to instruction fetch
 	
 	always @ (address)
 	begin
@@ -33,6 +32,7 @@ module Ram(read_write, address, data_in, data_out, fetch_out);
 		if (!read_write) 
 			mem[address] = data_in; 
 			$display("RAM -> data_in: %b", data_in);
+			$display("RAM -> address: %b", address);
 			$writememb("TestData/test_ram_write_str.txt", mem);
 
 	end
