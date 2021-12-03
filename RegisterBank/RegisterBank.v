@@ -119,6 +119,7 @@ module RegisterBank(dest,Din,srcadd1,srcadd2,src1,src2, opcode);
 				$display("RegisterBank -> r[12]: %b", registerBank[12]);
 				$display("RegisterBank -> r[13]: %b", registerBank[13]);
 				$display("RegisterBank -> r[14]: %b", registerBank[14]);
+				$display("RegisterBank -> r[15]: %b", registerBank[15]);
 				$display("RegisterBank -> Case statement running: %b", ((opcode != 4'b1110) && (opcode != 4'b1111) && (opcode != 4'b1011)));
 		end
     end

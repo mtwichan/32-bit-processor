@@ -80,7 +80,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
       // copy register value
       4'b0111: result = movreg_wire;
       // compare
-      4'b1000: result = cmp_wire;
+      4'b1000: result = 32'bx;
       // load
       4'b1001: result = ldr_wire;
       // store
@@ -114,7 +114,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   Load LDR1(.in(32'bx), .result(ldr_wire));
   Store STR1(.in(32'bx), .result(str_wire));
   Nop NOP1(.in(32'bx), .result(nop_wire));
-  Flags Flags1(.in1(in1), .in2(in2_interim), .s_bit(sbit), .opcode(opcode_interim), .op_result(result), .flags(outflags));
+  Flags Flags1(.in1(in1), .in2(in2_interim), .s_bit(sbit), .opcode(opcode_interim), .op_result(cmp_wire), .flags(outflags));
   Compare Cmp1(.in1(in1), .in2(in2_interim), .flags(cmp_wire));
 
   // increment program counter

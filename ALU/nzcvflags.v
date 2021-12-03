@@ -1,6 +1,6 @@
 module Flags(in1, in2, s_bit, opcode, op_result, flags);
-  input [31:0] in1, in2, op_result;
-  input [3:0] opcode;
+  input [31:0] in1, in2;
+  input [3:0] opcode, op_result;
   input s_bit;
   output reg [3:0] flags; // {N, Z, C, V}
   reg [2:0] temp_msb;
@@ -8,8 +8,8 @@ module Flags(in1, in2, s_bit, opcode, op_result, flags);
   always @ (*)
   begin
     // check if opcode is CMP instruction; the result is the flags
-    if ((opcode == 4'b1000) && (s_bit == 1))
-      flags = op_result[3:0];
+    if (opcode == 4'b1000)
+      flags = op_result;
     
     // check if s-bit is enabled and if opcode is NOP instruction
     else if (s_bit && !(opcode == 4'b1111))
