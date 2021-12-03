@@ -91,56 +91,35 @@ module RegisterBank(dest,Din,srcadd1,srcadd2,src1,src2, opcode);
 					registerBank[14] = Din;
 				end
 				16'b1000000000000000: begin
-					registerBank[15] = Din;	// R16
+					registerBank[15] = Din;	
 				end
 				default: begin
-					// do nothing
 				end
 			endcase
-			$display("RegisterBank -> dest: %b", dest);
-			$display("RegisterBank -> Din: %b", Din);	
-			$display("RegisterBank -> registerAddress: %b", registerAddress);		
-			$display("RegisterBank -> srcadd1: %b", srcadd1);		
-			$display("RegisterBank -> srcadd2: %b", srcadd2);
-			$display("RegisterBank -> src1:", src1);
-			$display("RegisterBank -> src2:", src2);
-			$display("RegisterBank -> opcode:", opcode);
-			$display("RegisterBank -> r[0]: %b", registerBank[0]);
-			$display("RegisterBank -> r[1]: %b", registerBank[1]);
-			$display("RegisterBank -> r[2]: %b", registerBank[2]);
-			$display("RegisterBank -> r[3]: %b", registerBank[3]);
-			$display("RegisterBank -> r[4]: %b", registerBank[4]);
-			$display("RegisterBank -> r[5]: %b", registerBank[5]);
-			$display("RegisterBank -> r[6]: %b", registerBank[6]);
-			$display("RegisterBank -> r[7]: %b", registerBank[7]);
-			$display("RegisterBank -> r[8]: %b", registerBank[8]);
-			$display("RegisterBank -> r[9]: %b", registerBank[9]);
-			$display("RegisterBank -> r[10]: %b", registerBank[10]);
-			$display("RegisterBank -> r[11]: %b", registerBank[11]);
-			$display("RegisterBank -> r[12]: %b", registerBank[12]);
-			$display("RegisterBank -> r[13]: %b", registerBank[13]);
-			$display("RegisterBank -> r[14]: %b", registerBank[14]);
-			$display("RegisterBank -> Case statement running: %b", ((opcode != 4'b1110) && (opcode != 4'b1111) && (opcode != 4'b1011)));
+				$display("RegisterBank -> dest: %b", dest);
+				$display("RegisterBank -> Din: %b", Din);	
+				$display("RegisterBank -> registerAddress: %b", registerAddress);		
+				$display("RegisterBank -> srcadd1: %b", srcadd1);		
+				$display("RegisterBank -> srcadd2: %b", srcadd2);
+				$display("RegisterBank -> src1:", src1);
+				$display("RegisterBank -> src2:", src2);
+				$display("RegisterBank -> opcode:", opcode);
+				$display("RegisterBank -> r[0]: %b", registerBank[0]);
+				$display("RegisterBank -> r[1]: %b", registerBank[1]);
+				$display("RegisterBank -> r[2]: %b", registerBank[2]);
+				$display("RegisterBank -> r[3]: %b", registerBank[3]);
+				$display("RegisterBank -> r[4]: %b", registerBank[4]);
+				$display("RegisterBank -> r[5]: %b", registerBank[5]);
+				$display("RegisterBank -> r[6]: %b", registerBank[6]);
+				$display("RegisterBank -> r[7]: %b", registerBank[7]);
+				$display("RegisterBank -> r[8]: %b", registerBank[8]);
+				$display("RegisterBank -> r[9]: %b", registerBank[9]);
+				$display("RegisterBank -> r[10]: %b", registerBank[10]);
+				$display("RegisterBank -> r[11]: %b", registerBank[11]);
+				$display("RegisterBank -> r[12]: %b", registerBank[12]);
+				$display("RegisterBank -> r[13]: %b", registerBank[13]);
+				$display("RegisterBank -> r[14]: %b", registerBank[14]);
+				$display("RegisterBank -> Case statement running: %b", ((opcode != 4'b1110) && (opcode != 4'b1111) && (opcode != 4'b1011)));
 		end
     end
-
-	// Registers regi(.Din(Din), .enable(registerAddress), 
-	// 	.q0(q0), 
-	// 	.q1(q1), 
-	// 	.q2(q2), 
-	// 	.q3(q3), 
-	// 	.q4(q4), 
-	// 	.q5(q5), 
-	// 	.q6(q6), 
-	// 	.q7(q7), 
-	// 	.q8(q8), 
-	// 	.q9(q9), 
-	// 	.q10(q10), 
-	// 	.q11(q11), 
-	// 	.q12(q12), 
-	// 	.q13(q13), 
-	// 	.q14(q14), 
-	// 	.q15(q15)
-	// 	);
-
 endmodule
