@@ -1,4 +1,5 @@
 `timescale 1 ns/10 ps
+
 module test_SysWiring;
 	// This test bench simulates the program counter fetch cycle and instruction execution
 

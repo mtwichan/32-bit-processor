@@ -7,11 +7,13 @@ module MUXLDRBus(sel_ldr_mux, ram_result, alu_result, data_ldr_out);
 		begin
 			if (sel_ldr_mux) 
 				begin
-					data_ldr_out <= ram_result; // opcode is LDR -> store result from ram
+					data_ldr_out = ram_result; // opcode is LDR -> store result from ram
 				end
 			else
 				begin
-					data_ldr_out <= alu_result; // opcode is not LDR -> store result from ALU
+					data_ldr_out = alu_result; // opcode is not LDR -> store result from ALU
 				end
+			$display("MUXLDRBUS -> data_ldr_out: %b", data_ldr_out);
+			$display("MUXLDRBUS -> sel_ldr_mux: %b", sel_ldr_mux);
 		end
 endmodule

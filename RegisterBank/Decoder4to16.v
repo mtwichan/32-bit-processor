@@ -1,27 +1,7 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    10:06:55 11/13/2021 
-// Design Name: 
-// Module Name:    Decoder4to16 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module Decoder4to16(in, out);
 	
 	input [3:0] in;									
-	output reg [15:0] out;				        // this is the enable for the registers
+	output reg [15:0] out; // this is the enable for the registers
 
 	always @ (*)
 	begin
@@ -44,7 +24,7 @@ module Decoder4to16(in, out);
 			4'b1111: out = 16'b1000000000000000;
 			default: out = 16'b0000000000000000; 				 
 		endcase
-		$display("decoder in: %b", in);
-		$display("decoder out: %b", out);
+		$display("Decoder4to16 -> decoder in: %b", in);
+		$display("Decoder4to16 -> decoder out: %b", out);
 	end
 endmodule

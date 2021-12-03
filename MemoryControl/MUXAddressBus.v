@@ -9,11 +9,11 @@ module MUXAddressBus(sel_add_bus, address_add_bus_in, address_add_bus_out, pc_ad
 		begin
 			if (sel_add_bus)
 				begin
-					address_add_bus_out <= address_add_bus_in; // Send Address from Register Bank if LDR or STR opcode
+					address_add_bus_out = address_add_bus_in; // Send Address from Register Bank if LDR or STR opcode
 				end
 			else
 				begin
-					address_add_bus_out <= pc_addr;
+					address_add_bus_out = pc_addr;
 				end
 		end
 endmodule

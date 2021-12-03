@@ -1,28 +1,17 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    11:40:03 11/13/2021 
-// Design Name: 
-// Module Name:    Registers 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 module Registers(Din,enable,q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q13, q14, q15);
 	input [31:0] Din;
 	input[15:0] enable;
-	output[31:0] q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q13, q14, q15;
+	output [31:0] q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q13, q14, q15;
 	
+	always @ (*)
+	begin
+		$display("Registers -> enable: %b", enable);
+		$display("Registers -> Din: %b", Din);
+
+		$display("Registers -> enable[0]: %b", enable[0]);
+		$display("Registers -> q0: %b", q0);
+	end
+
 	singleRegister32 R0(.en(enable[0]), .q(q0), .Din(Din)); 
 	singleRegister32 R1(.en(enable[1]), .q(q1), .Din(Din)); 
 	singleRegister32 R2(.en(enable[2]), .q(q2), .Din(Din)); 

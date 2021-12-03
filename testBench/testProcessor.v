@@ -1,5 +1,5 @@
 `timescale 1 ns/10 ps
-module test_processor;
+module atest_processor;
 	// This test bench simulates the program counter fetch cycle and instruction execution
 
 	localparam period = 10; // 10 * timescale = 10 * 1 ns  = 10ns
@@ -13,7 +13,7 @@ module test_processor;
 
 	initial
 	begin
-		$monitor($time, "PC : %d" , pc_counter);
+		$monitor($time, "Progam counter: %d" , pc_counter);
 	end
 
 	initial 
