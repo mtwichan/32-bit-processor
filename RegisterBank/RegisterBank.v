@@ -2,7 +2,7 @@ module RegisterBank(dest,Din,srcadd1,srcadd2,src1,src2, opcode);
 	input [3:0] dest,srcadd1,srcadd2;
 	input [31:0] Din;
 	input [3:0] opcode;
-	output [31:0] src1,src2;
+	output [31:0] src1, src2;
 	wire [15:0] registerAddress;
 	wire [31:0] q0, q1, q2, q3, q4, q5, q6, q7,q8, q9, q10, q11, q12, q13, q14, q15;
 	
@@ -43,7 +43,7 @@ module RegisterBank(dest,Din,srcadd1,srcadd2,src1,src2, opcode);
 		.q15(registerBank[15]));
 
 	always @ (registerAddress, Din) begin
-		if ((opcode != 4'b1110) && (opcode != 4'b1111) && (opcode != 4'b1011)) begin
+		if (opcode != 4'b1111) begin
 			case (registerAddress)
 				16'b0000000000000001: begin
 					registerBank[0] = Din;	

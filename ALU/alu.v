@@ -14,7 +14,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   wire [31:0] add_wire, sub_wire, mul_wire, and_wire, or_wire, xor_wire, lsr_wire, lsl_wire, rrot_wire, srcontrol_wire, movn_wire, movreg_wire, ldr_wire, str_wire, nop_wire;
 		  
   // check condition bits
-  always @ (cond)
+  always @ (*)
   begin
     opcode_interim = opcode;
 		
@@ -46,7 +46,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   end
   
   // check shift or rotate control bits
-  always @ (srcontrol)
+  always @ (*)
   begin
       case(srcontrol)
         // logical shift right
@@ -61,7 +61,7 @@ module ALU(in1, in2, sbit, cond, opcode, srcontrol, imvalue, inflags, outflags, 
   end
   
   // check op code bits
-  always @ (opcode_interim)
+  always @ (*)
   begin
     case(opcode_interim)
       // addition

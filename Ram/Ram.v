@@ -12,7 +12,7 @@ module Ram(read_write, address, data_in, data_out, fetch_out);
 
 	initial begin // load data into memory up front -> https://projectf.io/posts/initialize-memory-in-verilog/
 		$display("Loading instruction set into memory ...");
-		$readmemb("TestData/test_ram_read_alu.txt", mem); // Change file to load here
+		$readmemb("TestData/test_ram_read_str.txt", mem); // Change file to load here
 		fetch_out = mem[0];
 	end
 
